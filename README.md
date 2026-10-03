@@ -32,6 +32,9 @@ contains the reference outputs, so each stage can also be run on its own.
 | `pipeline.py <2LD\|3LD> A` | Thresholds: MC-calibrated h\* (bank), h_mix (mixture), h_u (decision-stream only), analytic h_a; each verified by an independent run | Table I caption; R0; R1 |
 | `pipeline.py <2LD\|3LD> B` | Signatures I(H₀), I(H₁), false-alarm excess Δ, delay bound, measured delay, critical rate 1/λ\*; bound versus measured delay over h; mixture and decision-stream-only comparisons; group-mode chart under a single-LD failure | Tables I, III, IV; Remark 1; Sec. VI; R1, R2 |
 | `pipeline.py <2LD\|3LD> C` | Mode-identification accuracy at the alarm; long-run P_f of the closed loop (renewal simulation, 10⁷ slots) | Sec. VI; S3; R1 |
+| `old_threshold_arl.py` | Bank-level ARL at the previous version's threshold h = ln 500, at C and at C_ε (quoted only in the response letter, R2.1) | — |
+| `h1_contamination.py` | Sensitivity to sustained targets, the gated and mixture variants, clock slip (Sec. VI "Sustained targets", R3, Table V) | — |
+| `variant_calibration.py` | The two variants as banks: threshold at bank ARL 10⁴, episode false alarms, delays with/without a coincident target, bound and critical rate; mixture weight interval; `report` also checks E_f0[exp(increment)] ≤ 1 per chart (R1's analytic bound) (R3, Table V). Staged: `<sys> <bank> <cal|check|meas>`, then `report` | `results/variants_<sys>_<bank>.json` |
 | `fig2_roc.py` | Team ROC, deterministic points and the operating point after an undetected failure (3-LD) | Fig. 2 |
 | `fig3_trajectory.py` | One realization of the group-mode CUSUM at the calibrated threshold | Fig. 3 |
 
