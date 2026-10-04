@@ -88,8 +88,19 @@ def make_3LD():
             label="deterministic operating points")
     hm=(H[:,0]>=0.0)&(H[:,0]<=0.40)
     ax.plot(H[hm,0],H[hm,1],"k-",lw=1.3,label="DR ROC (convex-hull boundary)")
-    ax.plot([Ap[0],Bp[0]],[Ap[1],Bp[1]],ls="--",color="#c04040",lw=0.9,
+    # DFC-only randomization ROC: local rules fixed as at A', B'; fusion rule
+    # randomized. Drawn through its next vertex so that W* visibly lies below it.
+    locs_dfc=((0.1,0.6),(0.1,0.6),(0.2,0.7))
+    Pdfc=sorted({tuple(round(x,6) for x in op_point(locs_dfc,f)) for f in RULES})
+    Hd=upper_hull(np.array(Pdfc))
+    seg=Hd[(Hd[:,0]>=Ap[0]-1e-9)&(Hd[:,0]<=0.36)]
+    ax.plot(seg[:,0],seg[:,1],ls="--",color="#c04040",lw=0.9,
             label="randomization at the DFC only")
+    def dfc_at(x):
+        for (x1,y1),(x2,y2) in zip(Hd[:-1],Hd[1:]):
+            if x1<=x<=x2: return y1+(y2-y1)*(x-x1)/(x2-x1)
+    assert abs(dfc_at(alpha)-E[1])<5e-4, "DFC-only ROC does not pass through E"
+    print(f"DFC-only ROC at Pf(W*)={Ws[0]}: Pd={dfc_at(Ws[0]):.4f}  (W*: {Ws[1]}; quoted in the introduction as 0.850)")
     ax.axvline(alpha,color="0.5",ls="--",lw=0.7)
     ax.text(alpha+0.003,0.700,r"$\alpha$",color="0.35",fontsize=7)
 
