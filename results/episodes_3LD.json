@@ -1,0 +1,114 @@
+{
+ "h_deployed": 6.275487613023982,
+ "h_mixture": 4.615734293513843,
+ "slots_per_cell": 2000000,
+ "dwells": [
+  5,
+  10,
+  20
+ ],
+ "gaps": [
+  100,
+  300,
+  1000,
+  3000
+ ],
+ "cells": {
+  "deployed_L5_G100": {
+   "eff_arl": 1853.5681186283596,
+   "alarms": 1079
+  },
+  "deployed_L5_G300": {
+   "eff_arl": 4255.31914893617,
+   "alarms": 470
+  },
+  "deployed_L5_G1000": {
+   "eff_arl": 7662.835249042146,
+   "alarms": 261
+  },
+  "deployed_L5_G3000": {
+   "eff_arl": 8298.755186721992,
+   "alarms": 241
+  },
+  "deployed_L10_G100": {
+   "eff_arl": 762.1951219512196,
+   "alarms": 2624
+  },
+  "deployed_L10_G300": {
+   "eff_arl": 2270.1475595913735,
+   "alarms": 881
+  },
+  "deployed_L10_G1000": {
+   "eff_arl": 5115.089514066496,
+   "alarms": 391
+  },
+  "deployed_L10_G3000": {
+   "eff_arl": 7812.5,
+   "alarms": 256
+  },
+  "deployed_L20_G100": {
+   "eff_arl": 343.93809114359414,
+   "alarms": 5815
+  },
+  "deployed_L20_G300": {
+   "eff_arl": 955.1098376313277,
+   "alarms": 2094
+  },
+  "deployed_L20_G1000": {
+   "eff_arl": 2564.102564102564,
+   "alarms": 780
+  },
+  "deployed_L20_G3000": {
+   "eff_arl": 4830.917874396136,
+   "alarms": 414
+  },
+  "mixture_L5_G100": {
+   "eff_arl": 9132.4200913242,
+   "alarms": 219
+  },
+  "mixture_L5_G300": {
+   "eff_arl": 9523.809523809523,
+   "alarms": 210
+  },
+  "mixture_L5_G1000": {
+   "eff_arl": 10638.297872340425,
+   "alarms": 188
+  },
+  "mixture_L5_G3000": {
+   "eff_arl": 10050.251256281406,
+   "alarms": 199
+  },
+  "mixture_L10_G100": {
+   "eff_arl": 7490.63670411985,
+   "alarms": 267
+  },
+  "mixture_L10_G300": {
+   "eff_arl": 9756.09756097561,
+   "alarms": 205
+  },
+  "mixture_L10_G1000": {
+   "eff_arl": 9756.09756097561,
+   "alarms": 205
+  },
+  "mixture_L10_G3000": {
+   "eff_arl": 10101.0101010101,
+   "alarms": 198
+  },
+  "mixture_L20_G100": {
+   "eff_arl": 6451.612903225807,
+   "alarms": 310
+  },
+  "mixture_L20_G300": {
+   "eff_arl": 9615.384615384615,
+   "alarms": 208
+  },
+  "mixture_L20_G1000": {
+   "eff_arl": 9569.377990430621,
+   "alarms": 209
+  },
+  "mixture_L20_G3000": {
+   "eff_arl": 9302.32558139535,
+   "alarms": 215
+  }
+ }
+}
