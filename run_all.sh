@@ -16,5 +16,12 @@ for sys in 2LD 3LD; do
   python3 pipeline.py $sys B         # Tables I, III, IV; Remark 1       (~3 min each)
   python3 pipeline.py $sys C         # identification; renewal (1e7 slots)
 done
+python3 a4_scan.py                   # (A4) eps scan, spurious-alarm policy, all-mode comparison (S3, Sec. V, R2; needs results/final_*.json)
+python3 s4_unequal.py                # S4 unequal-design example (recalibrated 2-LD bank; ~2 min)
+for s in 3LD 2LD; do
+  python3 continuous_loop.py $s 100  # continuous monitor + repair, rho=100 (Sec. VI, R1)  (~4 min each)
+  python3 continuous_loop.py $s 0    # same with instantaneous repair
+  python3 repeated_episodes.py $s    # repeated target episodes, no reset (Sec. VI, R3)
+done
 python3 fig2_roc.py                  # Fig. 2
 python3 fig3_trajectory.py           # Fig. 3 (needs results/final_2LD.json)
